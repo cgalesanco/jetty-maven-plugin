@@ -62,3 +62,25 @@ control this behavior using the `includeFilteredWarResources` configuration prop
 Did you like it?
 ----------------
 I've posted a [patch](https://bugs.eclipse.org/bugs/show_bug.cgi?id=407621) with this solution to the Jetty project at Eclipse. Comments supporting the enhancement are welcome.
+Meanwhile I've uploaded the modified plugin to my personal Maven repository. You can grab it from there tweaking your POM like this:
+
+```xml
+  <repositories>
+    <repository>
+      <id>desarrollo-agil</id>
+      <url>http://demo.desarrolloagil.es/nexus/content/repositories/releases/</url>
+    </repository>
+  </repositories>
+
+  <build>
+    ...
+    <plugins>
+      ...
+      <plugin>
+        <groupId>org.eclipse.jetty</groupId>
+        <artifactId>jetty-maven-plugin</artifactId>
+        <version>9.0.3.JSE</version>
+      </plugin>
+    </plugins>
+  </build>
+```
